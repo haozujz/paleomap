@@ -2,23 +2,43 @@
 //  MapViewModel.swift
 //  Paleo
 //
-//  Created by Joseph Zhu on 1/5/2022.
+//  Created by Joseph Zhu on 25/5/2022.
 //
 
 import MapKit
+import SwiftUI
+
+extension CLLocationCoordinate2D: Equatable {}
+
+public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+    return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+}
+
+//extension MKCoordinateSpan: Equatable {}
+//
+//public func ==(lhs: MKCoordinateSpan, rhs: MKCoordinateSpan) -> Bool {
+//    return lhs.latitudeDelta == rhs.latitudeDelta && lhs.longitudeDelta == rhs.longitudeDelta
+//}
+//
+//extension MKCoordinateRegion: Equatable {}
+//
+//public func ==(lhs: MKCoordinateRegion, rhs: MKCoordinateRegion) -> Bool {
+//    return lhs.center == rhs.center && lhs.span == rhs.span
+//}
 
 enum MapDetails {
-    static let defaultLocation = CLLocationCoordinate2D(latitude:  -33.737957, longitude: 151.020389)
-    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
+    static let defaultLocation = CLLocationCoordinate2D(latitude:  -33.8688, longitude: 151.2093)
+    static let defaultSpan = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
 }
 
 final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-    var locationManager: CLLocationManager?
-    
     @Published var region = MKCoordinateRegion(
         center: MapDetails.defaultLocation,
         span: MapDetails.defaultSpan
     )
+    @Published var isShowAlert: Bool = false
+    var alertMessage: String = ""
+    var locationManager: CLLocationManager?
     
     func checkIfLocationServicesIsEnabled() {
         if CLLocationManager.locationServicesEnabled() {
@@ -26,7 +46,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             locationManager?.desiredAccuracy = kCLLocationAccuracyBest
             locationManager?.delegate = self    //!
         } else {
-            print("Alert: allow Location Access")
+            alertMessage = "Allow Location Access"
+            isShowAlert = true
         }
     }
     
@@ -34,18 +55,20 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
         guard let locationManager = locationManager else { return }
         
         switch locationManager.authorizationStatus {
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
-            case .restricted:
-                print("Alert: Your location is restricted, possibly due to parental controls")
-            case .denied:
-                print("Alert: You have denied this app location permission. Go into settings to change it.")
-            case .authorizedAlways, .authorizedWhenInUse:
-                region = MKCoordinateRegion(
-                    center: locationManager.location?.coordinate ?? MapDetails.defaultLocation,
-                    span: MapDetails.defaultSpan)
-            @unknown default:
-                break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            alertMessage = "Your location is restricted, possibly due to parental controls"
+            isShowAlert = true
+        case .denied:
+            alertMessage = "You have denied this app location permission. Go into settings to change it."
+            isShowAlert = true
+        case .authorizedAlways, .authorizedWhenInUse:
+            region = MKCoordinateRegion(
+                center: locationManager.location?.coordinate ?? MapDetails.defaultLocation,
+                span: MapDetails.defaultSpan)
+        @unknown default:
+            break
         }
     }
     
@@ -59,7 +82,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let latestLocation = locations.first else {
-            print("Alert: Could not retrieve user location")
+            alertMessage = "Could not retrieve user location"
+            isShowAlert = true
             return
         }
         
@@ -72,5 +96,13 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
+    }
+    
+    func changeLocation(coord: CLLocationCoordinate2D) {
+        DispatchQueue.main.async {
+            self.region = MKCoordinateRegion(
+                center: coord,
+                span: MapDetails.defaultSpan)
+        }
     }
 }

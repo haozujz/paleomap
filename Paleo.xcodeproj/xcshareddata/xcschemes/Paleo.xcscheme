@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CC8CF2E2809123000CA9789"
-               BuildableName = "Paleo.app"
+               BlueprintIdentifier = "7C428DEA283B96A4003CE91D"
+               BuildableName = "PaleoMap.app"
                BlueprintName = "Paleo"
                ReferencedContainer = "container:Paleo.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CC8CF3E2809123700CA9789"
+               BlueprintIdentifier = "7C428DFA283B96AC003CE91D"
                BuildableName = "PaleoTests.xctest"
                BlueprintName = "PaleoTests"
                ReferencedContainer = "container:Paleo.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CC8CF482809123700CA9789"
+               BlueprintIdentifier = "7C428E04283B96AC003CE91D"
                BuildableName = "PaleoUITests.xctest"
                BlueprintName = "PaleoUITests"
                ReferencedContainer = "container:Paleo.xcodeproj">
@@ -64,8 +64,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7CC8CF2E2809123000CA9789"
-            BuildableName = "Paleo.app"
+            BlueprintIdentifier = "7C428DEA283B96A4003CE91D"
+            BuildableName = "PaleoMap.app"
             BlueprintName = "Paleo"
             ReferencedContainer = "container:Paleo.xcodeproj">
          </BuildableReference>
@@ -81,8 +81,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7CC8CF2E2809123000CA9789"
-            BuildableName = "Paleo.app"
+            BlueprintIdentifier = "7C428DEA283B96A4003CE91D"
+            BuildableName = "PaleoMap.app"
             BlueprintName = "Paleo"
             ReferencedContainer = "container:Paleo.xcodeproj">
          </BuildableReference>
