@@ -12,7 +12,7 @@ struct ImageCarousel: View {
     var media: [String]
 
     @State private var currentIndex: Int = 0
-    private let maxSize: CGFloat = 280
+    private let maxSize: CGFloat = UIScreen.main.bounds.size.height < 737 ? 228 : 280
     private let minSize: CGFloat = 160
     
     var body: some View {
@@ -33,6 +33,7 @@ struct ImageCarousel: View {
                 .offset(y: 30)
                 .frame(width: selectModel.isDetailedMode ? maxSize : minSize, height: selectModel.isDetailedMode ? maxSize : minSize, alignment: .center)
                 .clipped()
+                .offset(y: selectModel.isDetailedMode && UIScreen.main.bounds.size.height < 737 ? 34 : 0)
                 
                 if media.count > 1 && selectModel.isDetailedMode {
                     ZStack {
@@ -44,13 +45,14 @@ struct ImageCarousel: View {
                         HStack(spacing: 9) {
                             ForEach(media.indices, id: \.self){ index in
                                 Circle()
-                                    .fill(Color(red:0.9, green:0.9, blue:0.9).opacity(currentIndex == index ? 1 : 0.3))
+                                    .fill(Color(red:0.9, green:0.9, blue:0.9).opacity(currentIndex == index ? 1.0 : 0.3))
                                     .frame(width: 5, height: 5)
                                     .animation(.spring(), value: currentIndex == index)
                             }
                         }
                         .offset(y: 120)
                     }
+                    .offset(y: UIScreen.main.bounds.size.height < 737 ? 12 : 0)
                     .allowsHitTesting(false)
                 }
             }

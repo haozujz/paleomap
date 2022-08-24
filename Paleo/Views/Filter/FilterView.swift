@@ -53,7 +53,7 @@ struct FilterView: View {
             Text("Filter")
                 .font(.system(size: 32, weight: .heavy)).foregroundColor(Color(red:0.8, green:0.8, blue:0.8))
                 .frame(width: 320, height: 50, alignment: .leading)
-                .offset(x: -10, y: -20)
+                .offset(x: -10, y: UIScreen.main.bounds.size.height < 737 ? -15 : -20)
             
             ZStack {
                 GridStack(rows: 6, cols: 2, rowSpacing: -100, colSpacing: -120) { row, col in
@@ -62,6 +62,7 @@ struct FilterView: View {
                 }
                 .frame(width: 390, height: 600)
             }
+            .offset(y: UIScreen.main.bounds.size.height < 737 ? -25 : 0 )
         }
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
         .onDisappear { [weak modelData, weak viewModel, weak selectModel] in
