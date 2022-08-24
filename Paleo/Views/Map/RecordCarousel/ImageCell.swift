@@ -39,6 +39,7 @@ struct ImageCell: View {
 
                         image.resizable().scaledToFit()
                     }
+                    .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                     .onTapGesture {
 //                        DispatchQueue.main.async {
                         imageModel.image = image
@@ -85,7 +86,7 @@ struct ImageCell: View {
     }
 }
 
-//TabView w/ PageTabViewStyle gives memory leaks if selection: $currentIndex is passed
+//bug: TabView w/ PageTabViewStyle gives memory leaks if selection: $currentIndex is passed
 
 //struct ExtractedView: View {
 //    var body: some View {

@@ -16,33 +16,48 @@ struct ImageCarousel: View {
     private let minSize: CGFloat = 160
     
     var body: some View {
-        ZStack {
-            CarouselH(currentIndex: $currentIndex, items: media) { url  in
-                ImageCell(url: url)
+        ZStack { [weak selectModel] in
+            if let selectModel = selectModel {
+                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                    .fill(.black)
+                    .opacity(selectModel.isDetailedMode ? 0.0 : 0.1)
+                    .frame(width: selectModel.isDetailedMode ? maxSize : minSize, height: selectModel.isDetailedMode ? maxSize : minSize, alignment: .center)
+                    .onTapGesture {
+                        selectModel.isDetailedMode = true
+                    }
+                
+                CarouselH(currentIndex: $currentIndex, items: media) { url  in
+                    ImageCell(url: url)
+                }
+                .allowsHitTesting(selectModel.isDetailedMode)
+                .offset(y: 30)
+                .frame(width: selectModel.isDetailedMode ? maxSize : minSize, height: selectModel.isDetailedMode ? maxSize : minSize, alignment: .center)
+                .clipped()
+                
+                if media.count > 1 && selectModel.isDetailedMode {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(.thinMaterial)
+                            .frame(width: CGFloat(media.count) * 15, height: 20, alignment: .center)
+                            .offset(y: 120)
+                        
+                        HStack(spacing: 9) {
+                            ForEach(media.indices, id: \.self){ index in
+                                Circle()
+                                    .fill(Color(red:0.9, green:0.9, blue:0.9).opacity(currentIndex == index ? 1 : 0.3))
+                                    .frame(width: 5, height: 5)
+                                    .animation(.spring(), value: currentIndex == index)
+                            }
+                        }
+                        .offset(y: 120)
+                    }
+                    .allowsHitTesting(false)
+                }
             }
-            .offset(y: 30)
-            .frame(width: selectModel.isDetailedMode ? maxSize : minSize, height: selectModel.isDetailedMode ? maxSize : minSize, alignment: .center)
-            .clipped()
+            
+
         }
             
-        if media.count > 1 && selectModel.isDetailedMode {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.thinMaterial)
-                    .frame(width: CGFloat(media.count) * 15, height: 20, alignment: .center)
-                    .offset(y: 120)
-                
-                HStack(spacing: 9) {
-                    ForEach(media.indices, id: \.self){ index in
-                        Circle()
-                            .fill(Color(red:0.9, green:0.9, blue:0.9).opacity(currentIndex == index ? 1 : 0.3))
-                            .frame(width: 5, height: 5)
-                            .animation(.spring(), value: currentIndex == index)
-                    }
-                }
-                .offset(y: 120)
-            }
-        }
     }
 }
 

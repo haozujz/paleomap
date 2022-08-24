@@ -100,7 +100,7 @@ struct MapView: View {
                 RecordCarousel()
                     .offset(y: -35)
                     .frame(maxHeight: .infinity, alignment: .bottom)
-                    .frame(width: UIScreen.main.bounds.size.width > 400 ? 320 : UIScreen.main.bounds.size.width, alignment: .center)
+                    .frame(width: UIScreen.main.bounds.size.width > 600 ? 320 : UIScreen.main.bounds.size.width, alignment: .center)
                     .clipped()
         
             }

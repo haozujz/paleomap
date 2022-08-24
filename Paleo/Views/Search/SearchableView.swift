@@ -68,7 +68,8 @@ struct SearchableView: View {
                             }
                         }
                     }
-                    .frame(width: 370, height: UIScreen.main.bounds.size.height > 843 ? 560 : UIScreen.main.bounds.size.height - 284)
+                    //UIScreen.main.bounds.size.height > 843 ? 560 : UIScreen.main.bounds.size.height - 284
+                    .frame(width: 370, height: min((UIScreen.main.bounds.size.height - 284), 600))
                     .allowsHitTesting(searchState == .searching ? false : true)
                     
                     if UIScreen.main.bounds.size.height > 843 {
@@ -76,7 +77,7 @@ struct SearchableView: View {
                             .fill(Color(red:0.05, green:0.05, blue:0.05))
                             .blur(radius: 3)
                             .frame(width: 390, height: 10)
-                            .offset(y: -565 - 12)
+                            .offset(y: -1 * min((UIScreen.main.bounds.size.height - 284), 600) - 17) //-565 - 12
                         
                         Rectangle()
                             .fill(Color(red:0.05, green:0.05, blue:0.05))

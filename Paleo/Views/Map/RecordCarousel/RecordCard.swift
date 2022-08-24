@@ -182,7 +182,7 @@ struct RecordCard: View {
                     ImageCarousel(media: record.media)
                         .shadow(color: .black, radius: 4, y: 3)
                         .offset(x: selectModel.isDetailedMode ? offsetPerScreen + proxy.frame(in: .global).origin.x * 0.5 : -67.5 + offsetPerScreen + proxy.frame(in: .global).minX * 0.5, y: selectModel.isDetailedMode ? -245 : -20)
-                        .allowsHitTesting(selectModel.isDetailedMode)
+                        //.allowsHitTesting(selectModel.isDetailedMode)
                 } 
                 
             }
