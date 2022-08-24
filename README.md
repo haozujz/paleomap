@@ -4,7 +4,7 @@ Explore over 170,000 paleobiology records and specimens around the world. Based 
 
 iOS app. Data collected via api and webscraping. Cleaned and processed with python. 
 
-SwiftUI. MapKit.
+SwiftUI, MapKit.
 
 ## Notes
 
