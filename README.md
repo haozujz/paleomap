@@ -2,9 +2,9 @@
 
 Explore over 170,000 paleobiology records and specimens around the world. Based on the iDigBio collection. 
 
-iOS app. Data collected via api and webscraping. Cleaned and processed with python. 
+iOS app. Data collected via api and web scraping. Cleaned and processed with python. 
 
-SwiftUI. MapKit.
+SwiftUI, MapKit.
 
 ## Notes
 
