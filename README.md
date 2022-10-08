@@ -7,6 +7,8 @@ iOS app. Data collected via api and web scraping. Cleaned and processed with pyt
 
 SwiftUI, SQLite, MapKit.
 
+![ss](https://raw.githubusercontent.com/haozujz/paleomap/master/ss0.png)
+
 ## Notes
 
 Paleo/Resources/db.sqlite is a required file and can be downloaded seperately here: https://drive.google.com/file/d/1Z-YU9kUB1rHOJXL3FKosyvg0tvAd5_F3/view?usp=sharing
