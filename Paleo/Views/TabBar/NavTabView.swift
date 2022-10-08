@@ -30,7 +30,7 @@ struct NavTabView: View {
                         .tag(.map as TabBarItem)
                     
                     FilterView()
-                        .background(Color(red:0.05, green:0.05, blue:0.05))
+                        .background(Color(red:0.03, green:0.03, blue:0.03))
                         .ignoresSafeArea(.all, edges: .all)
                         .tag(.filter as TabBarItem)
                 }
@@ -57,7 +57,8 @@ struct NavTabView: View {
                             ZStack() {
                                 if tab == .map {
                                     Circle()
-                                        .fill(.ultraThickMaterial)
+                                        //.fill(.ultraThickMaterial)
+                                        .fill(Color(red:0.13, green:0.13, blue:0.13))
                                         .frame(width: 50, height: 50, alignment: .center)
                                         .scaleEffect(currentTab == tab ? 1.5 : 1.0)
                                         .opacity(currentTab == tab ? 1.0 : 0.0)
@@ -124,7 +125,7 @@ struct NavTabView: View {
                 .opacity(0.9)
                 
                 .background(
-                    Color(red:0.1, green:0.1, blue:0.1).opacity(0.95)
+                    Color(red:0.07, green:0.07, blue:0.07).opacity(0.95)
                         .ignoresSafeArea(edges: .bottom))
                 .cornerRadius(16)
                 .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 6)

@@ -33,7 +33,7 @@ struct RecordCarousel: View {
                 
                 CarouselHV(currentIndex: $currentIndex, items: selectModel.recordsNearby ?? []) { record  in
                     RecordCard(record: record)
-                        .animation(.easeInOut, value: selectModel.isDetailedMode)
+                        .animation(.easeInOut(duration: 0.22), value: selectModel.isDetailedMode)
                 }
                 .offset(y: -40)
                 

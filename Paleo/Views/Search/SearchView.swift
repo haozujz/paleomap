@@ -28,7 +28,7 @@ struct SearchView: View {
         }
         .onSubmit(of: .search) { [weak searchModel] in
             guard let searchModel = searchModel else {return}
-            searchModel.search(grid: modelData.grid)
+            searchModel.search(db: modelData.db, recordsTable: modelData.recordsTable)
         }
         .onAppear { [weak modelData] in
             guard let modelData = modelData else {return}

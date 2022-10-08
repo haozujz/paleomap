@@ -1,0 +1,6 @@
+framework module Pods_Paleo_PaleoUITests {
+  umbrella header "Pods-Paleo-PaleoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

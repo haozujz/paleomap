@@ -53,7 +53,7 @@ struct MapView: View {
                     MapAnnotation(coordinate: record.locationCoordinate) {
                         MapAnnotationView(record: record)
                             .onTapGesture {
-                                selectModel.updateSingleRecord(id: record.id, coord: record.locationCoordinate, grid: modelData.grid, isLikelyAnnotatedAlready: true)
+                                selectModel.updateSingleRecord(recordId: record.id, coord: record.locationCoordinate, db: modelData.db, recordsTable: modelData.recordsTable, isLikelyAnnotatedAlready: true)
                             }
                     }
                 }
@@ -64,7 +64,7 @@ struct MapView: View {
                     }
                 }
                 .onChange(of: viewModel.region.center) { _ in
-                    selectModel.updateRecordsSelection(coord: viewModel.region.center, grid: modelData.grid, filter: modelData.filterDict)
+                    selectModel.updateRecordsSelection(coord: viewModel.region.center, db: modelData.db, recordsTable: modelData.recordsTable, boxesTable: modelData.boxesTable, filter: modelData.filterDict)
                 }
                 .alert("Alert", isPresented: $viewModel.isShowAlert) {
                     Button("OK", role: .cancel) {}

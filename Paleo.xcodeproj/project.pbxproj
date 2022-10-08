@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19862B2744FFA6C95E21BA24 /* Pods_Paleo_PaleoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65F28FACFF97B03647B9DF8 /* Pods_Paleo_PaleoUITests.framework */; };
 		7C0877AD28683C01006E6816 /* NavTabView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0877AC28683C01006E6816 /* NavTabView2.swift */; };
 		7C0877B1286C6CCD006E6816 /* NavTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0877B0286C6CCD006E6816 /* NavTabView.swift */; };
 		7C0877B32875C604006E6816 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0877B22875C603006E6816 /* TabBarItem.swift */; };
@@ -45,7 +46,10 @@
 		7CDC09462852FED100E05A8D /* RecordSelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC09452852FED100E05A8D /* RecordSelectModel.swift */; };
 		7CDC095128534C1500E05A8D /* CarouselHV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC095028534C1500E05A8D /* CarouselHV.swift */; };
 		7CDC09572855A9D400E05A8D /* RecordCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC09562855A9D300E05A8D /* RecordCarousel.swift */; };
-		7CE0BA20289A79FF009D84A4 /* recordsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CE0BA1F289A79FF009D84A4 /* recordsData.json */; };
+		7CDC720D28ED89160043530C /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC720C28ED89160043530C /* GeoPoint.swift */; };
+		7CDC721128EF10F60043530C /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7CDC721028EF10ED0043530C /* db.sqlite */; };
+		8FE8CC8023A0B73C6BE2B95F /* Pods_Paleo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A895D0D763E5672C20F8643F /* Pods_Paleo.framework */; };
+		994AF9065035193561DDAAD1 /* Pods_Paleo_PaleoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FB3820C39A1142F7031859 /* Pods_Paleo_PaleoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17A2248B1289F1AC70C83445 /* Pods-Paleo-PaleoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoTests.release.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests.release.xcconfig"; sourceTree = "<group>"; };
+		1D3A3D023B2738A64578295A /* Pods-Paleo-PaleoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoTests.debug.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4995E973CF78B473A387F01E /* Pods-Paleo-PaleoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoUITests/Pods-Paleo-PaleoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C0877AC28683C01006E6816 /* NavTabView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabView2.swift; sourceTree = "<group>"; };
 		7C0877B0286C6CCD006E6816 /* NavTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabView.swift; sourceTree = "<group>"; };
 		7C0877B22875C603006E6816 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
@@ -108,7 +115,14 @@
 		7CDC09452852FED100E05A8D /* RecordSelectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSelectModel.swift; sourceTree = "<group>"; };
 		7CDC095028534C1500E05A8D /* CarouselHV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselHV.swift; sourceTree = "<group>"; };
 		7CDC09562855A9D300E05A8D /* RecordCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCarousel.swift; sourceTree = "<group>"; };
-		7CE0BA1F289A79FF009D84A4 /* recordsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recordsData.json; sourceTree = "<group>"; };
+		7CDC720C28ED89160043530C /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		7CDC721028EF10ED0043530C /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
+		903E17A00B27CEE2605CBD38 /* Pods-Paleo-PaleoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoUITests.release.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoUITests/Pods-Paleo-PaleoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A895D0D763E5672C20F8643F /* Pods_Paleo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paleo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4FB3820C39A1142F7031859 /* Pods_Paleo_PaleoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paleo_PaleoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56738529F11DB4991CC1E88 /* Pods-Paleo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo.debug.xcconfig"; path = "Target Support Files/Pods-Paleo/Pods-Paleo.debug.xcconfig"; sourceTree = "<group>"; };
+		B65F28FACFF97B03647B9DF8 /* Pods_Paleo_PaleoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Paleo_PaleoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC3AE11E9E2CA9303C79B61A /* Pods-Paleo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo.release.xcconfig"; path = "Target Support Files/Pods-Paleo/Pods-Paleo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE8CC8023A0B73C6BE2B95F /* Pods_Paleo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				994AF9065035193561DDAAD1 /* Pods_Paleo_PaleoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,12 +146,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19862B2744FFA6C95E21BA24 /* Pods_Paleo_PaleoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44ACFB5C0E251BF59C4AA2BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B56738529F11DB4991CC1E88 /* Pods-Paleo.debug.xcconfig */,
+				EC3AE11E9E2CA9303C79B61A /* Pods-Paleo.release.xcconfig */,
+				1D3A3D023B2738A64578295A /* Pods-Paleo-PaleoTests.debug.xcconfig */,
+				17A2248B1289F1AC70C83445 /* Pods-Paleo-PaleoTests.release.xcconfig */,
+				4995E973CF78B473A387F01E /* Pods-Paleo-PaleoUITests.debug.xcconfig */,
+				903E17A00B27CEE2605CBD38 /* Pods-Paleo-PaleoUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7C0BE6F5285A092100350D5A /* Map */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +182,8 @@
 				7C428DFE283B96AC003CE91D /* PaleoTests */,
 				7C428E08283B96AC003CE91D /* PaleoUITests */,
 				7C428DEC283B96A4003CE91D /* Products */,
+				44ACFB5C0E251BF59C4AA2BA /* Pods */,
+				A483E6315EF9C40AE164461E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,7 +240,7 @@
 		7C428E19283B96D5003CE91D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7CE0BA1F289A79FF009D84A4 /* recordsData.json */,
+				7CDC721028EF10ED0043530C /* db.sqlite */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -219,6 +251,7 @@
 				7C428E20283E2804003CE91D /* ModelData.swift */,
 				7C428E24283E3081003CE91D /* Record.swift */,
 				7C54C4BD2882B59D003EC563 /* Phylum.swift */,
+				7CDC720C28ED89160043530C /* GeoPoint.swift */,
 				7C871799283E4DA8008B840C /* MapViewModel.swift */,
 				7CDC09452852FED100E05A8D /* RecordSelectModel.swift */,
 				7C54C4B2287EE04E003EC563 /* ImageModel.swift */,
@@ -297,6 +330,16 @@
 			path = RecordCarousel;
 			sourceTree = "<group>";
 		};
+		A483E6315EF9C40AE164461E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A895D0D763E5672C20F8643F /* Pods_Paleo.framework */,
+				B4FB3820C39A1142F7031859 /* Pods_Paleo_PaleoTests.framework */,
+				B65F28FACFF97B03647B9DF8 /* Pods_Paleo_PaleoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,9 +347,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C428E0F283B96AC003CE91D /* Build configuration list for PBXNativeTarget "Paleo" */;
 			buildPhases = (
+				A7B694A92502166439A37D7F /* [CP] Check Pods Manifest.lock */,
 				7C428DE7283B96A4003CE91D /* Sources */,
 				7C428DE8283B96A4003CE91D /* Frameworks */,
 				7C428DE9283B96A4003CE91D /* Resources */,
+				1A6D43DA95C00655B4DD54A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,9 +366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C428E12283B96AC003CE91D /* Build configuration list for PBXNativeTarget "PaleoTests" */;
 			buildPhases = (
+				B3A659C263A8AF14D046A8CE /* [CP] Check Pods Manifest.lock */,
 				7C428DF7283B96AC003CE91D /* Sources */,
 				7C428DF8283B96AC003CE91D /* Frameworks */,
 				7C428DF9283B96AC003CE91D /* Resources */,
+				460CA64EF69D7B5E0CE1C66C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,9 +386,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C428E15283B96AC003CE91D /* Build configuration list for PBXNativeTarget "PaleoUITests" */;
 			buildPhases = (
+				11BE3352D70030FBAC521614 /* [CP] Check Pods Manifest.lock */,
 				7C428E01283B96AC003CE91D /* Sources */,
 				7C428E02283B96AC003CE91D /* Frameworks */,
 				7C428E03283B96AC003CE91D /* Resources */,
+				0B250E2460C681A808B5C294 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,9 +450,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDC721128EF10F60043530C /* db.sqlite in Resources */,
 				7C428DF6283B96AB003CE91D /* Preview Assets.xcassets in Resources */,
 				7C428DF3283B96AB003CE91D /* Assets.xcassets in Resources */,
-				7CE0BA20289A79FF009D84A4 /* recordsData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,11 +472,132 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B250E2460C681A808B5C294 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paleo-PaleoUITests/Pods-Paleo-PaleoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paleo-PaleoUITests/Pods-Paleo-PaleoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Paleo-PaleoUITests/Pods-Paleo-PaleoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		11BE3352D70030FBAC521614 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Paleo-PaleoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A6D43DA95C00655B4DD54A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paleo/Pods-Paleo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paleo/Pods-Paleo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Paleo/Pods-Paleo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		460CA64EF69D7B5E0CE1C66C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7B694A92502166439A37D7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Paleo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A659C263A8AF14D046A8CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Paleo-PaleoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7C428DE7283B96A4003CE91D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDC720D28ED89160043530C /* GeoPoint.swift in Sources */,
 				7C25054E288ADE7D00A8B26D /* SearchableView.swift in Sources */,
 				7C574EFD2855E64600759631 /* RecordCard.swift in Sources */,
 				7C428DF1283B96A4003CE91D /* ContentView.swift in Sources */,
@@ -615,6 +785,7 @@
 		};
 		7C428E10283B96AC003CE91D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B56738529F11DB4991CC1E88 /* Pods-Paleo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -648,6 +819,7 @@
 		};
 		7C428E11283B96AC003CE91D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC3AE11E9E2CA9303C79B61A /* Pods-Paleo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -681,6 +853,7 @@
 		};
 		7C428E13283B96AC003CE91D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D3A3D023B2738A64578295A /* Pods-Paleo-PaleoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -701,6 +874,7 @@
 		};
 		7C428E14283B96AC003CE91D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17A2248B1289F1AC70C83445 /* Pods-Paleo-PaleoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -721,6 +895,7 @@
 		};
 		7C428E16283B96AC003CE91D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4995E973CF78B473A387F01E /* Pods-Paleo-PaleoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -739,6 +914,7 @@
 		};
 		7C428E17283B96AC003CE91D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 903E17A00B27CEE2605CBD38 /* Pods-Paleo-PaleoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

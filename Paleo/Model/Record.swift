@@ -11,7 +11,6 @@ import SwiftUI
 
 struct Record: Hashable, Codable, Identifiable {
     var id: String
-    var basisOfRecord: String
     var commonName: String
     var scientificName: String
     var phylum: Phylum
@@ -30,11 +29,6 @@ struct Record: Hashable, Codable, Identifiable {
             longitude: geoPoint.lon)
     }
 
-    struct GeoPoint: Hashable, Codable {
-        let lat: Double
-        let lon: Double
-    }
-    
     var icon: String {
         switch self.phylum {
         case .annelida: return "hurricane"

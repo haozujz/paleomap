@@ -25,9 +25,9 @@ struct RecordBookmark: View {
             configuration.label
                 .background(alignment: .center) {
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .fill(configuration.isPressed ? Color(red:0.1, green:0.1, blue:0.1) : Color(red:0.2, green:0.2, blue:0.2))
+                        .fill(configuration.isPressed ? Color(red:0.1, green:0.1, blue:0.1) : Color(red:0.135, green:0.135, blue:0.135))
                         .frame(width: size.width, height: size.height)
-                        .shadow(color: .black, radius: 2, x: 0, y: 3)
+                        .shadow(color: .black, radius: 3, x: 0, y: 4)
                 }
         }
     }
@@ -52,7 +52,7 @@ struct RecordBookmark: View {
                                 .symbolRenderingMode(.monochrome)
                             
                             ZStack {
-                                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                RoundedRectangle(cornerRadius: 20.0, style: .continuous)
                                     .fill(.black)
                                 
                                 AsyncImage(url: URL(string: record.media[0])) { phase in
@@ -61,7 +61,7 @@ struct RecordBookmark: View {
                                             ProgressView()
                                         case .success(let image):
                                             ZStack {
-                                                RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                                RoundedRectangle(cornerRadius: 20.0, style: .continuous)
                                                     .fill(.black)
                                                 
                                                 image.resizable().scaledToFit()
@@ -77,7 +77,7 @@ struct RecordBookmark: View {
                             .offset(x: -67.5 - 15)
                         }
                         .frame(width: 320, height: 80)
-                        .cornerRadius(15.0)
+                        .cornerRadius(20.0)
                         .shadow(color: .black.opacity(0.88), radius: 4, y: 2)
 
                         Text("\(record.family)".capitalized)
@@ -97,9 +97,9 @@ struct RecordBookmark: View {
                                 return
                             }
                             
-                            selectModel.freezeRecordsNearbyThenUpdate(coord: record.locationCoordinate, grid: modelData.grid, filter: modelData.filterDict)
+                            selectModel.freezeRecordsNearbyThenUpdate(coord: record.locationCoordinate, db: modelData.db, recordsTable: modelData.recordsTable, boxesTable: modelData.boxesTable, filter: modelData.filterDict)
                             viewModel.changeLocation(coord: record.locationCoordinate)
-                            selectModel.updateSingleRecord(id: record.id, coord: record.locationCoordinate, grid: modelData.grid, isLikelyAnnotatedAlready: false)
+                            selectModel.updateSingleRecord(recordId: record.id, coord: record.locationCoordinate, db: modelData.db, recordsTable: modelData.recordsTable, isLikelyAnnotatedAlready: false)
                             selectModel.isDetailedMode = false
                             DispatchQueue.main.async {
                                 currentTab = .map
@@ -139,6 +139,6 @@ struct RecordBookmark: View {
 
 struct RecordBookmark_Previews: PreviewProvider {
     static var previews: some View {
-        RecordBookmark(currentTab: .constant(.search), record: Record(id: "c605530d-c733-4b90-b092-a1a6bc342e34", basisOfRecord: "preservedspecimen", commonName: "", scientificName: "cephrenes augiades sperthias (c. felder, 1862)", phylum: .arthropoda, classT: "insecta", order: "lepidoptera", family: "Pieridae", locality: "sydney, lugarno", eventDate: "1981-10-22", media: ["https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012764.JPG", "https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012720.JPG"], geoPoint: Record.GeoPoint(lat: -33.985112, lon: -151.043726)))
+        RecordBookmark(currentTab: .constant(.search), record: Record(id: "c605530d-c733-4b90-b092-a1a6bc342e34", commonName: "", scientificName: "cephrenes augiades sperthias (c. felder, 1862)", phylum: .arthropoda, classT: "insecta", order: "lepidoptera", family: "Pieridae", locality: "sydney, lugarno", eventDate: "1981-10-22", media: ["https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012764.JPG", "https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012720.JPG"], geoPoint: GeoPoint(lat: -33.985112, lon: -151.043726)))
     }
 }

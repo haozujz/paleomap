@@ -41,10 +41,8 @@ struct ImageCell: View {
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 25, style: .continuous))
                     .onTapGesture {
-//                        DispatchQueue.main.async {
                         imageModel.image = image
                         imageModel.isShowImage = true
-//                        }
                     }
                 case .failure:
                     ZStack {

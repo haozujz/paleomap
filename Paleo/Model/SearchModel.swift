@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SQLite
 
 final class SearchModel: ObservableObject {
     @Published var isSearching: Bool = false
@@ -19,7 +20,7 @@ final class SearchModel: ObservableObject {
     
     @Published var searchText: String = ""
     
-    func search(grid: [[Record]]) {
+    func search(db: Connection, recordsTable: Table) {
         logSearchEvent()
         isSearching = true
         
@@ -29,18 +30,40 @@ final class SearchModel: ObservableObject {
         
         DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime.now() + 0.1, execute: { [weak self] in
             guard let self = self else {return}
+
+            let id = Expression<String>("id")
+            let sName = Expression<String?>("sName")
+            let cName = Expression<String?>("cName")
+            let phylum = Expression<String>("phylum")
+            let classT = Expression<String?>("classT")
+            let orderT = Expression<String?>("orderT")
+            let family = Expression<String?>("family")
+            let date = Expression<String?>("date")
+            let locality = Expression<String?>("locality")
+            let lat = Expression<Double>("lat")
+            let lon = Expression<Double>("lon")
+            let mediaS = Expression<String>("media")
             
             var x: [Record] = []
             
-            for box in grid {
-                if savedAbortKey != self.abortKey { break }
-                x += box.filter{ self.filterProcess(record: $0, submittedText: submittedText) }
+            do {
+                let query = recordsTable.filter(phylum == submittedText || classT == submittedText || orderT == submittedText || family == submittedText || sName == submittedText || cName == submittedText)
+                
+                for record in try db.prepare(query) {
+                    if savedAbortKey != self.abortKey { break }
+                    let phy: Phylum = Phylum(rawValue: record[phylum]) ?? .chordata
+                    let geo: GeoPoint = GeoPoint(lat: record[lat], lon: record[lon])
+                    let med: [String] = record[mediaS].components(separatedBy: "|")
+                    let r = Record(id: record[id], commonName: record[cName] ?? "", scientificName: record[sName] ?? "", phylum: phy, classT: record[classT] ?? "", order: record[orderT] ?? "", family: record[family] ?? "", locality: record[locality] ?? "", eventDate: record[date] ?? "", media: med, geoPoint: geo)
+                    x.append(r)
+                }
+            } catch {
+                fatalError("Failed query:\n\(error)")
             }
+
             if savedAbortKey == self.abortKey { x.sort {$0.family < $1.family} }
             
             DispatchQueue.main.async {
-                //print("abortKey: \(self.abortKey)")
-                //print("savedAbortKey: \(savedAbortKey)")
                 if savedAbortKey == self.abortKey {
                     self.results = x
                     self.lastCompletedSearch = submittedText.capitalized
@@ -48,11 +71,6 @@ final class SearchModel: ObservableObject {
                 }
             }
         })
-    }
-    
-    func filterProcess(record: Record, submittedText: String) -> Bool {
-        let terms: [String] = [record.scientificName, record.commonName, record.phylum.rawValue, record.order, record.classT, record.family]
-        return terms.contains(submittedText)
     }
     
     func logSearchEvent() {

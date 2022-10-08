@@ -30,9 +30,9 @@ struct RecordCard: View {
             configuration.label
                 .background(alignment: .center) {
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .fill(configuration.isPressed ? Color(red:0.1, green:0.1, blue:0.1) : Color(red:0.2, green:0.2, blue:0.2))
+                        .fill(configuration.isPressed ? Color(red:0.1, green:0.1, blue:0.1) : Color(red:0.135, green:0.135, blue:0.135))
                         .frame(width: size.width, height: size.height)
-                        .shadow(color: .black, radius: 2, x: 0, y: 3)
+                        .shadow(color: .black, radius: 3, x: 0, y: 4)
                 }
         }
     }
@@ -79,7 +79,7 @@ struct RecordCard: View {
                         .font(.system(size: 16, weight: .bold)).foregroundColor(textColorB)
                         .offset(y: -32)
                         .background(alignment: .center) {
-                            Color(red:0.1, green:0.1, blue:0.1)
+                            Color(red:0.07, green:0.07, blue:0.07)
                                 .frame(width: 95, height: selectModel.isDetailedMode ? 570 : 170)
                                 .shadow(color: .black, radius: selectModel.isDetailedMode ? 4 : 0, x: selectModel.isDetailedMode ? 2 : 0, y: 0)
                         }
@@ -151,7 +151,7 @@ struct RecordCard: View {
                     }
                     
                     Button(action: {
-                        selectModel.freezeRecordsNearbyThenUpdate(coord: record.locationCoordinate, grid: modelData.grid, filter: modelData.filterDict)
+                        selectModel.freezeRecordsNearbyThenUpdate(coord: record.locationCoordinate, db: modelData.db, recordsTable: modelData.recordsTable, boxesTable: modelData.boxesTable, filter: modelData.filterDict)
                         viewModel.changeLocation(coord: record.locationCoordinate)
                         selectModel.isDetailedMode = false
                     }, label: {
@@ -182,7 +182,6 @@ struct RecordCard: View {
                     ImageCarousel(media: record.media)
                         .shadow(color: .black, radius: 4, y: 3)
                         .offset(x: selectModel.isDetailedMode ? offsetPerScreen + proxy.frame(in: .global).origin.x * 0.5 : -67.5 + offsetPerScreen + proxy.frame(in: .global).minX * 0.5, y: selectModel.isDetailedMode ? -245 : -20)
-                        //.allowsHitTesting(selectModel.isDetailedMode)
                 } 
                 
             }
@@ -198,7 +197,7 @@ struct RecordCard_Previews: PreviewProvider {
 
     static var previews: some View {
         RecordCard(record:
-                    Record(id: "c605530d-c733-4b90-b092-a1a6bc342e34", basisOfRecord: "preservedspecimen", commonName: "", scientificName: "cephrenes augiades sperthias (c. felder, 1862)", phylum: .arthropoda, classT: "insecta", order: "lepidoptera", family: "Pieridae", locality: "sydney, lugarno", eventDate: "1981-10-22", media: ["https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012764.JPG", "https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012720.JPG"], geoPoint: Record.GeoPoint(lat: -33.985112, lon: 151.043726))
+                    Record(id: "c605530d-c733-4b90-b092-a1a6bc342e34", commonName: "", scientificName: "cephrenes augiades sperthias (c. felder, 1862)", phylum: .arthropoda, classT: "insecta", order: "lepidoptera", family: "Pieridae", locality: "sydney, lugarno", eventDate: "1981-10-22", media: ["https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012764.JPG", "https://mczbase.mcz.harvard.edu/specimen_images/ent-lepidoptera/images/2009_07_31/IMG_012720.JPG"], geoPoint: GeoPoint(lat: -33.985112, lon: 151.043726))
         )
     }
 }

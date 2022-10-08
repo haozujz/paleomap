@@ -114,7 +114,7 @@ struct PhylumToggle: View {
                 .offset(x: 0, y: -20)
                 .allowsHitTesting(false)
         }
-        .animation(.spring(response: 0.15), value: isActive)
+        .animation(.spring(response: 0.05), value: isActive)
     }
 }
 
