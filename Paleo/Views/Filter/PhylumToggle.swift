@@ -100,7 +100,7 @@ struct PhylumToggle: View {
             Circle()
                 .foregroundStyle(.ultraThinMaterial)
                 .frame(width: 22, height: 22)
-                .shadow(color: Color(red:0.1, green:0.1, blue:0.1).opacity(0.8), radius: 2, x: 0, y: 1)
+                .shadow(color: Color(red:0.05, green:0.05, blue:0.05), radius: 2, x: 0, y: 1)
                 .offset(x: isActive ? 57 : 32, y: 18)
                 .allowsHitTesting(false)
             

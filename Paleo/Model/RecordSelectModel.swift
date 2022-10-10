@@ -17,7 +17,7 @@ final class RecordSelectModel: ObservableObject {
     private var timer: Timer?
     private var isRecordsNearbyFrozen: Bool = false
     private let threshold: CGFloat = 0.01
-    private let maxRecordsCount: Int = 12
+    private let maxRecordsCount: Int = 10
     
     func updateRecordsSelection(coord: CLLocationCoordinate2D, db: Connection, recordsTable: Table, boxesTable: Table, filter: [Phylum : Bool], isIgnoreThreshold: Bool = false) {
         timer?.invalidate()
