@@ -74,13 +74,13 @@ struct SearchableView: View {
                     
                     if UIScreen.main.bounds.size.height > 843 {
                         Rectangle()
-                            .fill(Color(red:0.03, green:0.03, blue:0.03))
+                            .fill(Color(red:0.04, green:0.04, blue:0.04))
                             .blur(radius: 3)
                             .frame(width: 390, height: 10)
                             .offset(y: -1 * min((UIScreen.main.bounds.size.height - 284), 600) - 17) //-565 - 12
                         
                         Rectangle()
-                            .fill(Color(red:0.03, green:0.03, blue:0.03))
+                            .fill(Color(red:0.04, green:0.04, blue:0.04))
                             .blur(radius: 3)
                             .frame(width: 390, height: 10)
                             .offset(y: -15 - 24)
@@ -89,7 +89,7 @@ struct SearchableView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
                 .frame(maxHeight: .infinity, alignment: .center)
                 .background(alignment: .center) {
-                    Color(red:0.03, green:0.03, blue:0.03)
+                    Color(red:0.04, green:0.04, blue:0.04)
                         .ignoresSafeArea(.all, edges: .all)
                         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height)
                         .position(x: UIScreen.main.bounds.size.width/2, y: UIScreen.main.bounds.size.height/2)

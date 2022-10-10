@@ -16,8 +16,8 @@ final class RecordSelectModel: ObservableObject {
     private var savedCoord = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     private var timer: Timer?
     private var isRecordsNearbyFrozen: Bool = false
-    private let threshold: CGFloat = 0.01 //0.08
-    private let maxRecordsCount: Int = 20 //150
+    private let threshold: CGFloat = 0.01
+    private let maxRecordsCount: Int = 15
     
     func updateRecordsSelection(coord: CLLocationCoordinate2D, db: Connection, recordsTable: Table, boxesTable: Table, filter: [Phylum : Bool], isIgnoreThreshold: Bool = false) {
         timer?.invalidate()

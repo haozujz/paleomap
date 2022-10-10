@@ -30,7 +30,7 @@ struct RecordCard: View {
             configuration.label
                 .background(alignment: .center) {
                     RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        .fill(configuration.isPressed ? Color(red:0.1, green:0.1, blue:0.1) : Color(red:0.135, green:0.135, blue:0.135))
+                        .fill(configuration.isPressed ? Color(red:0.1, green:0.1, blue:0.1) : Color(red:0.14, green:0.14, blue:0.14))
                         .frame(width: size.width, height: size.height)
                         .shadow(color: .black, radius: 3, x: 0, y: 4)
                 }

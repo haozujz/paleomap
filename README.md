@@ -5,8 +5,15 @@ Based on the iDigBio collection.
 
 iOS app. Data collected via api and web scraping. Cleaned and processed with python. 
 
-SwiftUI, MapKit.
+SwiftUI, SQLite, MapKit.
 
-## Notes
+<img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss0.png" width="180" /> <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss1.png" width="180" /> <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss2.png" width="180" /> <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss3.png" width="180" />
 
-Paleo/Resources/recordsData.json can be downloaded seperately here: https://drive.google.com/file/d/1IyjJ82F39fvgD8XqxfZ7PNP6sBwnkKi1/view?usp=sharing
+## Required
+
+Paleo/Resources/db.sqlite is a required file and can be downloaded separately here: https://drive.google.com/file/d/1Z-YU9kUB1rHOJXL3FKosyvg0tvAd5_F3/view?usp=sharing
+
+## Potential updates
+
+ - Adjust for standard Apple UI & UX design
+ - Implement map annotation clustering

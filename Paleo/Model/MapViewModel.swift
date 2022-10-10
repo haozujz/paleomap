@@ -43,7 +43,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     func checkIfLocationServicesIsEnabled() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager = CLLocationManager()
-            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager?.desiredAccuracy = kCLLocationAccuracyKilometer
             locationManager?.delegate = self    //!
         } else {
             alertMessage = "Allow Location Access"
@@ -77,7 +77,9 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     }
     
     func requestAllowOnceLocationPermission() {
-        locationManager?.requestLocation()
+        //locationManager?.requestLocation()
+        locationManager?.startUpdatingLocation()
+        print("started")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -86,6 +88,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             isShowAlert = true
             return
         }
+        locationManager?.stopUpdatingLocation()
+        print("stopped")
         
         DispatchQueue.main.async {
             self.region = MKCoordinateRegion(
