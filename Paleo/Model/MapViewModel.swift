@@ -64,8 +64,18 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             alertMessage = "You have denied this app location permission. Go into settings to change it."
             isShowAlert = true
         case .authorizedAlways, .authorizedWhenInUse:
+            var initialLocation: CLLocationCoordinate2D
+            let savedLat = UserDefaults.standard.double(forKey: "lat")
+            let savedLon = UserDefaults.standard.double(forKey: "lon")
+            
+            if (savedLat == 0.0) && (savedLon == 0.0) {
+                initialLocation = MapDetails.defaultLocation
+            } else {
+                initialLocation = CLLocationCoordinate2D(latitude: savedLat, longitude: savedLon)
+            }
+
             region = MKCoordinateRegion(
-                center: locationManager.location?.coordinate ?? MapDetails.defaultLocation,
+                center: locationManager.location?.coordinate ?? initialLocation,
                 span: MapDetails.defaultSpan)
         @unknown default:
             break
@@ -77,9 +87,8 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     }
     
     func requestAllowOnceLocationPermission() {
-        //locationManager?.requestLocation()
+        //locationManager?.requestLocation()    //slower & more accurate
         locationManager?.startUpdatingLocation()
-        print("started")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -89,7 +98,9 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             return
         }
         locationManager?.stopUpdatingLocation()
-        print("stopped")
+        
+        UserDefaults.standard.set(latestLocation.coordinate.latitude, forKey: "lat")
+        UserDefaults.standard.set(latestLocation.coordinate.longitude, forKey: "lon")
         
         DispatchQueue.main.async {
             self.region = MKCoordinateRegion(

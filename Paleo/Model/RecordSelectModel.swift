@@ -16,12 +16,12 @@ final class RecordSelectModel: ObservableObject {
     private var savedCoord = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     private var timer: Timer?
     private var isRecordsNearbyFrozen: Bool = false
-    private let threshold: CGFloat = 0.008   //0.01
-    private let maxRecordsCount: Int = 12
+    private let threshold: CGFloat = 0.008   
+    private let maxRecordsCount: Int = 10
     
     func updateRecordsSelection(coord: CLLocationCoordinate2D, db: Connection, recordsTable: Table, boxesTable: Table, filter: [Phylum : Bool], isIgnoreThreshold: Bool = false) {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false) { [weak self] _ in
             guard let self = self else {return}
             
             if !isIgnoreThreshold && !self.isRecordsNearbyFrozen && (self.manhattanDistance(loc1: self.savedCoord, loc2: coord)) < self.threshold {

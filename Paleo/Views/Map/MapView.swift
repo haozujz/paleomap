@@ -19,39 +19,40 @@ struct MapView: View {
     @State private var isLocationServicesChecked: Bool = false
     
     struct MapAnnotationView: View {
-        var record: Record
+        let color: Color
+        let icon: String
         
         var body: some View {
             ZStack {
                 Image(systemName: "circle.fill")
-                    .foregroundColor(record.color)
+                    .foregroundColor(color)
                     .saturation(0.6)
                     .font(.system(size: 35))
-                Image(systemName: record.icon)
+                Image(systemName: icon)
                     .foregroundColor(Color.init(red:0.1, green:0.1, blue:0.1))
-                    .scaleEffect(CGSize(width: record.icon == "hare.fill" || record.icon == "fossil.shell.fill" || record.icon == "bird.fill" ? -1.0 : 1.0, height: 1.0))
-                    .scaleEffect(record.icon == "seal.fill" ? 0.8 : 1.0)
-                    .rotationEffect(.degrees(record.icon == "hurricane" ? -20.0 : 0.0))
-                    .font(.system(size: record.icon == "hare.fill" || record.icon == "ant.fill" ? 20 : 25, weight: record.icon == "seal.fill" ? .thin : .bold))
-                    .offset(y: record.icon == "hare.fill" || record.icon == "ant.fill" ? -1 : 0)
+                    .scaleEffect(CGSize(width: icon == "hare.fill" || icon == "fossil.shell.fill" || icon == "bird.fill" ? -1.0 : 1.0, height: 1.0))
+                    .scaleEffect(icon == "seal.fill" ? 0.8 : 1.0)
+                    .rotationEffect(.degrees(icon == "hurricane" ? -20.0 : 0.0))
+                    .font(.system(size: icon == "hare.fill" || icon == "ant.fill" ? 20 : 25, weight: icon == "seal.fill" ? .thin : .bold))
+                    .offset(y: icon == "hare.fill" || icon == "ant.fill" ? -1 : 0)
             }
             .symbolRenderingMode(.monochrome)
         }
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) { [weak modelData, weak viewModel, weak selectModel] in
-            if let modelData = modelData, let viewModel = viewModel, let bViewModel = $viewModel, let selectModel = selectModel {
+        ZStack(alignment: .bottom) { //[weak modelData, weak viewModel, weak selectModel] in
+            //if let modelData = modelData, let viewModel = viewModel, let selectModel = selectModel {//
                 
                 Map(
-                    coordinateRegion: bViewModel.region,
+                    coordinateRegion: $viewModel.region,
                     interactionModes: MapInteractionModes.all,
                     showsUserLocation: true,
                     //userTrackingMode: $trackingMode,
                     annotationItems: selectModel.records
                 ) { record in
                     MapAnnotation(coordinate: record.locationCoordinate) {
-                        MapAnnotationView(record: record)
+                        MapAnnotationView(color: record.color, icon: record.icon)
                             .onTapGesture {
                                 selectModel.updateSingleRecord(recordId: record.id, coord: record.locationCoordinate, db: modelData.db, recordsTable: modelData.recordsTable, isLikelyAnnotatedAlready: true)
                             }
@@ -103,7 +104,7 @@ struct MapView: View {
                     .frame(width: UIScreen.main.bounds.size.width > 600 ? 320 : UIScreen.main.bounds.size.width, alignment: .center)
                     .clipped()
         
-            }
+            //}//
             
         }
     }
