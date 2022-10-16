@@ -11,8 +11,8 @@ import SwiftUI
 struct CarouselH<Content: View, T: Hashable>: View {
     @EnvironmentObject private var selectModel: RecordSelectModel
     @Binding var currentIndex: Int
-    private var content: (T) -> Content
-    private var list: [T]
+    private let content: (T) -> Content
+    private let list: [T]
     
     init(currentIndex: Binding<Int>, items: [T], @ViewBuilder content: @escaping (T)->Content){
         self.list = items

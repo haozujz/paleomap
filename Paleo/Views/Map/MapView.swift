@@ -15,8 +15,8 @@ struct MapView: View {
     @EnvironmentObject private var viewModel: MapViewModel
     @EnvironmentObject private var selectModel: RecordSelectModel
     
-    //@State private var trackingMode: MapUserTrackingMode = .follow
     @State private var isLocationServicesChecked: Bool = false
+    //@State private var trackingMode: MapUserTrackingMode = .follow
     
     struct MapAnnotationView: View {
         let color: Color

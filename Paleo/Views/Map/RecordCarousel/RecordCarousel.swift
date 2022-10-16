@@ -34,9 +34,6 @@ struct RecordCarousel: View {
                 CarouselHV(currentIndex: $currentIndex, items: selectModel.recordsNearby ?? []) { record  in
                     RecordCard(record: record)
                         .animation(.easeInOut(duration: 0.2), value: selectModel.isDetailedMode)
-                        .onTapGesture {
-                            selectModel.isDetailedMode = true
-                        }
                 }
                 .offset(y: -40)
                 

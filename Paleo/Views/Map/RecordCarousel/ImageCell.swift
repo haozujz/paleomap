@@ -10,9 +10,9 @@ import SwiftUI
 struct ImageCell: View {
     @EnvironmentObject private var selectModel: RecordSelectModel
     @EnvironmentObject private var imageModel: ImageModel
-    var url: String
+    let url: String
     
-    // Allow retry media URL (must also change 'url' ref in body to 'urlToLoad'
+    // Allow reconnecting to media URL (require change 'url' ref in body to 'urlToLoad'
 //    @State private var urlToLoad: String
     
 //    init(url: String) {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PhylumToggle: View {
     @Binding var isActive: Bool
-    var phylum: Phylum
+    let phylum: Phylum
     
     var icon: String {
         switch phylum {

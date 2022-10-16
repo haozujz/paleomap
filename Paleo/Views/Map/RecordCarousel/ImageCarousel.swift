@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ImageCarousel: View {
     @EnvironmentObject private var selectModel: RecordSelectModel
-    var media: [String]
+    let media: [String]
 
     @State private var currentIndex: Int = 0
     private let maxSize: CGFloat = UIScreen.main.bounds.size.height < 737 ? 228 : 280
@@ -22,9 +22,6 @@ struct ImageCarousel: View {
                     .fill(.black)
                     .opacity(selectModel.isDetailedMode ? 0.0 : 0.1)
                     .frame(width: selectModel.isDetailedMode ? maxSize : minSize, height: selectModel.isDetailedMode ? maxSize : minSize, alignment: .center)
-                    .onTapGesture {
-                        selectModel.isDetailedMode = true
-                    }
                 
                 CarouselH(currentIndex: $currentIndex, items: media) { url  in
                     ImageCell(url: url)

@@ -13,13 +13,13 @@ struct RecordBookmark: View {
     @EnvironmentObject private var selectModel: RecordSelectModel
     @EnvironmentObject private var redFilterModel: RedFilterModel
     @Binding var currentTab: TabBarItem
-    var record: Record
+    let record: Record
 
-    let textColorA: Color = .init(red:0.07, green:0.07, blue:0.07)
-    let textColorB: Color = .init(red:0.87, green:0.87, blue:0.87)
+    private let textColorA: Color = .init(red:0.07, green:0.07, blue:0.07)
+    private let textColorB: Color = .init(red:0.87, green:0.87, blue:0.87)
     
     struct SimpleButtonStyle: ButtonStyle {
-        var size: CGSize
+        let size: CGSize
         
         func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label
@@ -126,8 +126,8 @@ struct RecordBookmark: View {
                                 }
                             }
                         })
+                        .offset(x: 77, y: 10)
                         .buttonStyle(SimpleButtonStyle(size: CGSize(width: 125, height: 50)))
-                        .offset(x: 87 - 10, y: 15 - 4)
                         
                     }
                 

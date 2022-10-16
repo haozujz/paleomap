@@ -12,7 +12,7 @@ struct RecordCard: View {
     @EnvironmentObject private var modelData: ModelData
     @EnvironmentObject private var viewModel: MapViewModel
     @EnvironmentObject private var selectModel: RecordSelectModel
-    var record: Record
+    let record: Record
 
     @State private var isShowAlert: Bool = false
     private var data: [String] {
@@ -24,7 +24,7 @@ struct RecordCard: View {
     private let subtitles: [String] = ["Scientific\nName", "Common\nName", "Phylum", "Order", "Class", "Family", "Event\nDate", "Locality", "Coord"]
     
     struct SimpleButtonStyle: ButtonStyle {
-        var size: CGSize
+        let size: CGSize
         
         func makeBody(configuration: Self.Configuration) -> some View {
             configuration.label
@@ -84,6 +84,7 @@ struct RecordCard: View {
                                 .shadow(color: .black, radius: selectModel.isDetailedMode ? 4 : 0, x: selectModel.isDetailedMode ? 2 : 0, y: 0)
                         }
                         .offset(x: selectModel.isDetailedMode ? -115 : -220)
+                        .allowsHitTesting(false)
                         
                         ZStack(alignment: .center) {
                             ForEach(0...7, id: \.self) { idx in
@@ -102,6 +103,9 @@ struct RecordCard: View {
                     .frame(width: 320, height: selectModel.isDetailedMode ? 570 : 170)
                     .cornerRadius(15.0)
                     .shadow(color: .black, radius: 4, y: 2)
+                    .onTapGesture {
+                        selectModel.isDetailedMode = !selectModel.isDetailedMode
+                    }
 
                     Text("\(record.family)".capitalized)
                         .frame(width: 140, height: 60, alignment: .center)
@@ -130,7 +134,7 @@ struct RecordCard: View {
                             isShowAlert = true
                             return
                         }
-                        
+
                         if modelData.bookmarked.contains(record) {
                             modelData.bookmarked = modelData.bookmarked.filter{ $0.id != record.id }
                         } else {
@@ -142,8 +146,8 @@ struct RecordCard: View {
                             .font(.system(size: 25, weight: .bold))
                     })
                     .opacity(selectModel.isDetailedMode ? 1.0 : 0.0)
-                    .buttonStyle(SimpleButtonStyle(size: CGSize(width: 40, height: 40)))
                     .offset(x: selectModel.isDetailedMode ? 111 : 134, y: selectModel.isDetailedMode ? 257 : 24)
+                    .buttonStyle(SimpleButtonStyle(size: CGSize(width: 40, height: 40)))
                     .alert("Alert", isPresented: $isShowAlert) {
                         Button("OK", role: .cancel) {}
                     } message: {
@@ -160,14 +164,14 @@ struct RecordCard: View {
                                 .foregroundColor(textColorB)
                                 .font(.system(size: 20))
                                 .offset(x: 13)
-                            
+
                             VStack(spacing: -10) {
                                 Text("Lat: \(record.geoPoint.lat, specifier: "%.3f")")
                                     .frame(width: 115, height: 30, alignment: .leading)
                                     .clipped()
                                     .font(.system(size: 15, weight: .semibold)).foregroundColor(textColorB)
                                     .offset(x: 8)
-                                
+
                                 Text("Lon: \(record.geoPoint.lon, specifier: "%.3f")")
                                     .frame(width: 115, height: 30, alignment: .leading)
                                     .clipped()
@@ -176,9 +180,9 @@ struct RecordCard: View {
                             }
                         }
                     })
-                    .buttonStyle(SimpleButtonStyle(size: CGSize(width: 125, height: 50)))
                     .offset(x: selectModel.isDetailedMode ? 46 - 23 : 87, y: selectModel.isDetailedMode ? 256 : 24)
-                    
+                    .buttonStyle(SimpleButtonStyle(size: CGSize(width: 125, height: 50)))
+                   
                     ImageCarousel(media: record.media)
                         .shadow(color: .black, radius: 4, y: 3)
                         .offset(x: selectModel.isDetailedMode ? offsetPerScreen + proxy.frame(in: .global).origin.x * 0.5 : -67.5 + offsetPerScreen + proxy.frame(in: .global).minX * 0.5, y: selectModel.isDetailedMode ? -245 : -20)

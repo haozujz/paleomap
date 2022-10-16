@@ -11,8 +11,8 @@ import SwiftUI
 struct CarouselHV<Content: View, T: Identifiable>: View {
     @EnvironmentObject private var selectModel: RecordSelectModel
     @Binding var currentIndex: Int
-    private var content: (T) -> Content
-    private var list: [T]
+    private let content: (T) -> Content
+    private let list: [T]
     
     private let spacing: CGFloat
     private let trailingSpace: CGFloat
