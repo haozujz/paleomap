@@ -65,6 +65,9 @@ struct MapView: View {
                     }
                 }
                 .onChange(of: viewModel.region.center) { _ in
+//                    DispatchQueue.global(qos: .userInteractive).async {
+//                        selectModel.updateRecordsSelection(coord: viewModel.region.center, db: modelData.db, recordsTable: modelData.recordsTable, boxesTable: modelData.boxesTable, filter: modelData.filterDict)
+//                    }
                     selectModel.updateRecordsSelection(coord: viewModel.region.center, db: modelData.db, recordsTable: modelData.recordsTable, boxesTable: modelData.boxesTable, filter: modelData.filterDict)
                 }
                 .alert("Alert", isPresented: $viewModel.isShowAlert) {
@@ -73,7 +76,7 @@ struct MapView: View {
                     Text(viewModel.alertMessage)
                 }
                 
-                if selectModel.recordsNearby?.count == 0 {
+                if selectModel.recordsNearby?.isEmpty ?? true {
                     ZStack {
                         Rectangle()
                             .fill(Color(red:0.8, green:0.8, blue:0.8))

@@ -14,7 +14,7 @@ struct NavTabView: View {
     @StateObject var redFilterModel = RedFilterModel()
     @State var currentTab: TabBarItem = .map
     @State private var iconColor: Color = .init(red:0.8, green:0.8, blue:0.8)
-    let inactiveColor: Color = .init(red:0.3, green:0.3, blue:0.3)
+    private let inactiveColor: Color = .init(red:0.3, green:0.3, blue:0.3)
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) { [weak viewModel, weak imageModel] in

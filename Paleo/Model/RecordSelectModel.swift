@@ -30,6 +30,10 @@ final class RecordSelectModel: ObservableObject {
             let x = self.roundLat(lat: coord.latitude)
             let y = self.roundLon(lon: coord.longitude)
             let gridIndex: Int = Int(x * 3600 + y)
+            
+//            DispatchQueue.main.async {
+//                self.records = self.getRecordsFromDbPerBox(centerIndex: gridIndex, db: db, recordsTable: recordsTable, boxesTable: boxesTable, filter: filter, coord: coord)
+//            }
             self.records = self.getRecordsFromDbPerBox(centerIndex: gridIndex, db: db, recordsTable: recordsTable, boxesTable: boxesTable, filter: filter, coord: coord)
             self.savedCoord = coord
             
