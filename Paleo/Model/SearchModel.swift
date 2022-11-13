@@ -28,7 +28,7 @@ final class SearchModel: ObservableObject {
         let submittedText: String = searchText.lowercased()
         let savedAbortKey: Int = abortKey
         
-        DispatchQueue.global(qos: .utility).asyncAfter(deadline: DispatchTime.now(), execute: {
+        DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: DispatchTime.now(), execute: {
             let id = Expression<String>("id")
             let sName = Expression<String?>("sName")
             let cName = Expression<String?>("cName")

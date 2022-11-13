@@ -25,16 +25,16 @@ final class ModelData: ObservableObject {
     
     var filterDict: [Phylum : Bool]
     let db: Connection
-    let recordsTable: Table
-    let boxesTable: Table
+    let recordsTable: SQLite.Table
+    let boxesTable: SQLite.Table
     
     init() {
         //intialize db, recordsTable, boxesTable
         do {
             let dbPath = Bundle.main.path(forResource: "db", ofType: "sqlite")!
             self.db = try Connection(dbPath, readonly: true)
-            self.recordsTable = Table("records")
-            self.boxesTable = Table("boxes")
+            self.recordsTable = SQLite.Table("records")
+            self.boxesTable = SQLite.Table("boxes")
         } catch {
             fatalError("Couldn't load db.sqlite from main bundle:\n\(error)")
         }

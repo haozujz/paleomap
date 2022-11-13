@@ -24,23 +24,26 @@ final class RecordSelectModel: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false) { [weak self] _ in
             guard let self = self else {return}
             
-            if !isIgnoreThreshold && !self.isRecordsNearbyFrozen && (self.manhattanDistance(loc1: self.savedCoord, loc2: coord)) < self.threshold {
-                return
-            }
-            let x = self.roundLat(lat: coord.latitude)
-            let y = self.roundLon(lon: coord.longitude)
-            let gridIndex: Int = Int(x * 3600 + y)
-            
-//            DispatchQueue.main.async {
-//                self.records = self.getRecordsFromDbPerBox(centerIndex: gridIndex, db: db, recordsTable: recordsTable, boxesTable: boxesTable, filter: filter, coord: coord)
-//            }
-            self.records = self.getRecordsFromDbPerBox(centerIndex: gridIndex, db: db, recordsTable: recordsTable, boxesTable: boxesTable, filter: filter, coord: coord)
-            self.savedCoord = coord
-            
-            if self.isRecordsNearbyFrozen {
-                self.isRecordsNearbyFrozen = false
-            } else {
-                self.updateRecordsNearby()
+            DispatchQueue.global(qos: .userInteractive).async {
+                if !isIgnoreThreshold && !self.isRecordsNearbyFrozen && (self.manhattanDistance(loc1: self.savedCoord, loc2: coord)) < self.threshold {
+                    return
+                }
+                let x = self.roundLat(lat: coord.latitude)
+                let y = self.roundLon(lon: coord.longitude)
+                let gridIndex: Int = Int(x * 3600 + y)
+                
+                DispatchQueue.main.async {
+                    self.records = self.getRecordsFromDbPerBox(centerIndex: gridIndex, db: db, recordsTable: recordsTable, boxesTable: boxesTable, filter: filter, coord: coord)
+                }
+                self.savedCoord = coord
+                
+                if self.isRecordsNearbyFrozen {
+                    self.isRecordsNearbyFrozen = false
+                } else {
+                    DispatchQueue.main.async {
+                        self.updateRecordsNearby()
+                    }
+                }
             }
         }
     }
