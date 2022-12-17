@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		19862B2744FFA6C95E21BA24 /* Pods_Paleo_PaleoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65F28FACFF97B03647B9DF8 /* Pods_Paleo_PaleoUITests.framework */; };
-		7C0877AD28683C01006E6816 /* NavTabView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0877AC28683C01006E6816 /* NavTabView2.swift */; };
 		7C0877B1286C6CCD006E6816 /* NavTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0877B0286C6CCD006E6816 /* NavTabView.swift */; };
 		7C0877B32875C604006E6816 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0877B22875C603006E6816 /* TabBarItem.swift */; };
-		7C0BE6F02859829F00350D5A /* CarouselAlt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0BE6EF2859829F00350D5A /* CarouselAlt.swift */; };
 		7C0BE6F72860519400350D5A /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0BE6F62860519400350D5A /* ImageCarousel.swift */; };
 		7C25054E288ADE7D00A8B26D /* SearchableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C25054D288ADE7C00A8B26D /* SearchableView.swift */; };
 		7C428DEF283B96A4003CE91D /* PaleoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C428DEE283B96A4003CE91D /* PaleoApp.swift */; };
@@ -31,18 +29,12 @@
 		7C54C4BE2882B59E003EC563 /* Phylum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54C4BD2882B59D003EC563 /* Phylum.swift */; };
 		7C54C4C02882CD6E003EC563 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C54C4BF2882CD6E003EC563 /* GridStack.swift */; };
 		7C574EFD2855E64600759631 /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C574EFC2855E64600759631 /* RecordCard.swift */; };
-		7C692833288455BF00E66B96 /* PhylumTogglePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C692832288455BE00E66B96 /* PhylumTogglePreferenceKey.swift */; };
-		7C699C3628953E9000B4F7A7 /* Scrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C699C3528953E9000B4F7A7 /* Scrap.swift */; };
 		7C85587328867AD0007E040B /* RecordBookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85587228867AD0007E040B /* RecordBookmark.swift */; };
-		7C85587528868D49007E040B /* FilterView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85587428868D49007E040B /* FilterView2.swift */; };
-		7C85587728868DB9007E040B /* PhylumToggle2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85587628868DB9007E040B /* PhylumToggle2.swift */; };
-		7C8558792886982E007E040B /* Carousel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8558782886982E007E040B /* Carousel2.swift */; };
 		7C85587B288A3E1F007E040B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85587A288A3E1B007E040B /* SearchModel.swift */; };
 		7C85587D288A7EAC007E040B /* RedFilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C85587C288A7EAB007E040B /* RedFilterModel.swift */; };
 		7C87179A283E4DA8008B840C /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C871799283E4DA8008B840C /* MapViewModel.swift */; };
 		7CA33D5C2890FA3D00E517FA /* CarouselH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA33D5B2890FA3D00E517FA /* CarouselH.swift */; };
 		7CA33D5E289116B700E517FA /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA33D5D289116B700E517FA /* ImageCell.swift */; };
-		7CDC093D284C903B00E05A8D /* DebouncedCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC093C284C903B00E05A8D /* DebouncedCoord.swift */; };
 		7CDC09462852FED100E05A8D /* RecordSelectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC09452852FED100E05A8D /* RecordSelectModel.swift */; };
 		7CDC095128534C1500E05A8D /* CarouselHV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC095028534C1500E05A8D /* CarouselHV.swift */; };
 		7CDC09572855A9D400E05A8D /* RecordCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDC09562855A9D300E05A8D /* RecordCarousel.swift */; };
@@ -73,10 +65,8 @@
 		17A2248B1289F1AC70C83445 /* Pods-Paleo-PaleoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoTests.release.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D3A3D023B2738A64578295A /* Pods-Paleo-PaleoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoTests.debug.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoTests/Pods-Paleo-PaleoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4995E973CF78B473A387F01E /* Pods-Paleo-PaleoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paleo-PaleoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Paleo-PaleoUITests/Pods-Paleo-PaleoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7C0877AC28683C01006E6816 /* NavTabView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabView2.swift; sourceTree = "<group>"; };
 		7C0877B0286C6CCD006E6816 /* NavTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabView.swift; sourceTree = "<group>"; };
 		7C0877B22875C603006E6816 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
-		7C0BE6EF2859829F00350D5A /* CarouselAlt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselAlt.swift; sourceTree = "<group>"; };
 		7C0BE6F62860519400350D5A /* ImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
 		7C25054D288ADE7C00A8B26D /* SearchableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchableView.swift; sourceTree = "<group>"; };
 		7C428DEB283B96A4003CE91D /* PaleoMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaleoMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,18 +90,12 @@
 		7C54C4BF2882CD6E003EC563 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		7C574EFC2855E64600759631 /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
 		7C574F00285730B000759631 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		7C692832288455BE00E66B96 /* PhylumTogglePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhylumTogglePreferenceKey.swift; sourceTree = "<group>"; };
-		7C699C3528953E9000B4F7A7 /* Scrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrap.swift; sourceTree = "<group>"; };
 		7C85587228867AD0007E040B /* RecordBookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordBookmark.swift; sourceTree = "<group>"; };
-		7C85587428868D49007E040B /* FilterView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView2.swift; sourceTree = "<group>"; };
-		7C85587628868DB9007E040B /* PhylumToggle2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhylumToggle2.swift; sourceTree = "<group>"; };
-		7C8558782886982E007E040B /* Carousel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel2.swift; sourceTree = "<group>"; };
 		7C85587A288A3E1B007E040B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		7C85587C288A7EAB007E040B /* RedFilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFilterModel.swift; sourceTree = "<group>"; };
 		7C871799283E4DA8008B840C /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		7CA33D5B2890FA3D00E517FA /* CarouselH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselH.swift; sourceTree = "<group>"; };
 		7CA33D5D289116B700E517FA /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		7CDC093C284C903B00E05A8D /* DebouncedCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebouncedCoord.swift; sourceTree = "<group>"; };
 		7CDC09452852FED100E05A8D /* RecordSelectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSelectModel.swift; sourceTree = "<group>"; };
 		7CDC095028534C1500E05A8D /* CarouselHV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselHV.swift; sourceTree = "<group>"; };
 		7CDC09562855A9D300E05A8D /* RecordCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCarousel.swift; sourceTree = "<group>"; };
@@ -206,7 +190,6 @@
 				7C428E1A283B96F2003CE91D /* Model */,
 				7C428E19283B96D5003CE91D /* Resources */,
 				7C428DF2283B96AB003CE91D /* Assets.xcassets */,
-				7CDC09402850705800E05A8D /* Scrap */,
 				7C428DF4283B96AB003CE91D /* Preview Content */,
 			);
 			path = Paleo;
@@ -300,21 +283,6 @@
 				7C0877B22875C603006E6816 /* TabBarItem.swift */,
 			);
 			path = TabBar;
-			sourceTree = "<group>";
-		};
-		7CDC09402850705800E05A8D /* Scrap */ = {
-			isa = PBXGroup;
-			children = (
-				7C699C3528953E9000B4F7A7 /* Scrap.swift */,
-				7C692832288455BE00E66B96 /* PhylumTogglePreferenceKey.swift */,
-				7C8558782886982E007E040B /* Carousel2.swift */,
-				7C0877AC28683C01006E6816 /* NavTabView2.swift */,
-				7CDC093C284C903B00E05A8D /* DebouncedCoord.swift */,
-				7C0BE6EF2859829F00350D5A /* CarouselAlt.swift */,
-				7C85587428868D49007E040B /* FilterView2.swift */,
-				7C85587628868DB9007E040B /* PhylumToggle2.swift */,
-			);
-			path = Scrap;
 			sourceTree = "<group>";
 		};
 		7CDC094B2853263400E05A8D /* RecordCarousel */ = {
@@ -606,30 +574,22 @@
 				7CDC09462852FED100E05A8D /* RecordSelectModel.swift in Sources */,
 				7CA33D5E289116B700E517FA /* ImageCell.swift in Sources */,
 				7C0BE6F72860519400350D5A /* ImageCarousel.swift in Sources */,
-				7CDC093D284C903B00E05A8D /* DebouncedCoord.swift in Sources */,
 				7C54C4B828829969003EC563 /* FilterView.swift in Sources */,
-				7C0877AD28683C01006E6816 /* NavTabView2.swift in Sources */,
 				7C0877B1286C6CCD006E6816 /* NavTabView.swift in Sources */,
 				7CDC09572855A9D400E05A8D /* RecordCarousel.swift in Sources */,
-				7C8558792886982E007E040B /* Carousel2.swift in Sources */,
 				7C85587B288A3E1F007E040B /* SearchModel.swift in Sources */,
 				7C54C4BE2882B59E003EC563 /* Phylum.swift in Sources */,
-				7C699C3628953E9000B4F7A7 /* Scrap.swift in Sources */,
 				7C428E25283E3081003CE91D /* Record.swift in Sources */,
 				7C85587328867AD0007E040B /* RecordBookmark.swift in Sources */,
 				7C54C4BC2882AE04003EC563 /* PhylumToggle.swift in Sources */,
 				7C44CF692885841F00AC29DF /* SearchView.swift in Sources */,
 				7CA33D5C2890FA3D00E517FA /* CarouselH.swift in Sources */,
-				7C85587728868DB9007E040B /* PhylumToggle2.swift in Sources */,
 				7C54C4C02882CD6E003EC563 /* GridStack.swift in Sources */,
 				7C54C4B3287EE04F003EC563 /* ImageModel.swift in Sources */,
 				7C87179A283E4DA8008B840C /* MapViewModel.swift in Sources */,
 				7C428E1F283E276C003CE91D /* MapView.swift in Sources */,
-				7C692833288455BF00E66B96 /* PhylumTogglePreferenceKey.swift in Sources */,
 				7C0877B32875C604006E6816 /* TabBarItem.swift in Sources */,
 				7CDC095128534C1500E05A8D /* CarouselHV.swift in Sources */,
-				7C85587528868D49007E040B /* FilterView2.swift in Sources */,
-				7C0BE6F02859829F00350D5A /* CarouselAlt.swift in Sources */,
 				7C428DEF283B96A4003CE91D /* PaleoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

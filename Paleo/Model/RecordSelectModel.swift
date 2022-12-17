@@ -21,7 +21,7 @@ final class RecordSelectModel: ObservableObject {
     
     func updateRecordsSelection(coord: CLLocationCoordinate2D, db: Connection, recordsTable: Table, boxesTable: Table, filter: [Phylum : Bool], isIgnoreThreshold: Bool = false) {
         timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.15, repeats: false) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { [weak self] _ in
             guard let self = self else {return}
             
             DispatchQueue.global(qos: .userInteractive).async {
