@@ -18,3 +18,4 @@ Paleo/Resources/db.sqlite is a required file and can be downloaded separately he
 
  - Adjust for standard Apple UI & UX design
  - Implement map annotation clustering
+ - Leverage machine learning to salvage data entry inconsistencies
