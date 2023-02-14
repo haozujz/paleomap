@@ -6,7 +6,7 @@ Avalable on the App Store.
 
 iOS app. Data collected via api and web scraping. Cleaned and processed with python. 
 
-SwiftUI, SQLite, MapKit.
+SwiftUI, UIKit, SQLite, MapKit.
 
 <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss0.png" width="180" /> <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss1.png" width="180" /> <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss2.png" width="180" /> <img src="https://raw.githubusercontent.com/haozujz/paleomap/master/ss3.png" width="180" />
 
