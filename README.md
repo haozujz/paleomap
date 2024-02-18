@@ -12,7 +12,7 @@ SwiftUI, UIKit, SQLite, MapKit.
 
 ## Required
 
-Paleo/Resources/db.sqlite is a required file and can be downloaded separately here: https://drive.google.com/file/d/1Z-YU9kUB1rHOJXL3FKosyvg0tvAd5_F3/view?usp=sharing
+Paleo/Resources/db.sqlite is a required file and can be downloaded separately here (permission required): https://drive.google.com/file/d/1Z-YU9kUB1rHOJXL3FKosyvg0tvAd5_F3/view?usp=sharing
 
 ## Potential updates
 
